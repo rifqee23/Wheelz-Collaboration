@@ -4,7 +4,7 @@ session_start();
 ?>
 
 <header
-  class="flex fixed z-50 flex-wrap sm:justify-start sm:flex-nowrap w-full bg-primary text-sm py-4 dark:bg-neutral-800"
+  class="fixed z-50 flex flex-wrap w-full py-4 text-sm sm:justify-start sm:flex-nowrap bg-primary dark:bg-neutral-800"
 >
   <nav
     class="max-w-[115rem]  items-center w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
@@ -14,7 +14,7 @@ session_start();
       ><img class="w-72" src="./asset/logo.png" alt=""
     /></a>
     <div
-      class="flex flex-row items-center gap-10 text-2xl text-white mt-5 sm:justify-end sm:mt-0 sm:ps-5"
+      class="flex flex-row items-center gap-10 mt-5 text-2xl text-white sm:justify-end sm:mt-0 sm:ps-5"
     >
       <a class="font-medium" href="index.php" aria-current="page">Home</a>
       <a
@@ -35,18 +35,18 @@ session_start();
 
       <?php if (!isset($_SESSION['user'])) : ?>
       <button
-        class="py-2 px-10 font-bold bg-secondary rounded-lg hover:opacity-75"
+        class="px-10 py-2 font-bold rounded-lg bg-secondary hover:opacity-75"
       >
         <a href="login.php">Login</a>
       </button>
       <?php else : ?>
-      <!-- <button class="py-2 px-10 font-bold bg-secondary rounded-lg hover:opacity-75"></button> -->
+      <!-- <button class="px-10 py-2 font-bold rounded-lg bg-secondary hover:opacity-75"></button> -->
 
-      <div class="hs-dropdown relative inline-flex">
+      <div class="relative inline-flex hs-dropdown">
         <button
           id="hs-dropdown-with-header"
           type="button"
-          class="hs-dropdown-toggle py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+          class="inline-flex items-center px-4 py-3 text-sm font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm hs-dropdown-toggle gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
         >
         <?php echo 'Hi, ' . $_SESSION['user']['nama']; ?>
           <svg
@@ -70,7 +70,7 @@ session_start();
           aria-labelledby="hs-dropdown-with-header"
         >
           <div
-            class="py-3 px-5 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-700"
+            class="px-5 py-3 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-700"
           >
             <p class="text-sm text-gray-500 dark:text-neutral-400">
               Signed in as
@@ -79,7 +79,7 @@ session_start();
               <?php echo $_SESSION['user']['email'] ?>
             </p>
           </div>
-          <div class="mt-2 py-2 first:pt-0 last:pb-0">
+          <div class="py-2 mt-2 first:pt-0 last:pb-0">
             <a
               class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
               href="logout.php"

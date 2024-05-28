@@ -138,7 +138,9 @@ $result = mysqli_query($conn, $sql);
 
             <div class="flex justify-around w-11/12 mx-auto mt-10">
               <a id="cancelBtn" class="py-4 text-2xl font-bold rounded-full w-44 bg-input" href="">Tidak</a>
-              <a  class="py-4 text-2xl font-bold rounded-full w-44 bg-input" href="">Ya</a>
+              
+              <a id="confirmBtn" class="py-4 text-2xl font-bold rounded-full w-44 bg-input" href="#">Ya</a>
+              
 
             </div>
           </div>
@@ -153,12 +155,16 @@ $result = mysqli_query($conn, $sql);
       const modal = document.getElementById("modal")
       const bookBtn = document.querySelectorAll("#bookBtn");
       const cancelBtn = document.querySelectorAll("#cancelBtn");
+      const confirmBtn = document.getElementById("confirmBtn");
       const modalImage = document.getElementById("modalImage");
+      
 
+      let selectedId = "";
 
       bookBtn.forEach(btn => {
         btn.addEventListener("click", () => {
           const gambar = btn.getAttribute("data-gambar");
+          selectedId = btn.getAttribute("data-id");
           modalImage.src = `./mobil/${gambar}`;
           modalImage.classList.add("w-1/2")
           modal.classList.remove("hidden");
@@ -173,6 +179,9 @@ $result = mysqli_query($conn, $sql);
         })
       })
 
+      confirmBtn.addEventListener("click", () =>{
+        window.location.href = `booking.php?id=${selectedId}`;
+      })
 
     </script>
   </body>
