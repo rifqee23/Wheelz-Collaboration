@@ -16,14 +16,12 @@
         <div class="flex justify-center">
 
         </div>
-        <div class="flex justify-center bg-black">
+        <div class="flex justify-center mt-5 bg-root">
         <div
           class="flex flex-col w-full max-w-xl border shadow-sm bg-primary rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
         >
           <div class="p-4 md:p-7">
-            <!-- <div class="shrink-0">
-              <img class="w-40" src="./mobil/download 1.png" alt="" />
-            </div> -->
+            
 
             <div class="flex justify-center">
                 <img class="w-80" src="mobil/download 1.png" alt="" />
@@ -107,5 +105,7 @@
         </div>
         </div>
     </section>
+
+    <?php include("layout/footbar2.php") ?>
 </body>
 </html>
