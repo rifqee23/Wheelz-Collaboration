@@ -76,33 +76,65 @@
                 <?php endwhile; ?>
 
 
-                <div class="w-full mt-[3.19rem] bg-input">
+                <div class="w-full mt-24 bg-input">
                     <h1 class="py-2 text-2xl text-center text-white bg-primary">Tempat</h1>
                     <div class="px-16 py-10">
                         <div class="">
                             <label class="block mb-2 text-2xl" for="">Waktu Booking</label>
-                            <div class="flex items-center justify-center">
-                                <input class="px-4 py-2 text-lg border rounded-md" type="text" id="dateInput" placeholder="Pilih tanggal">
+                            <div class="flex items-center">
+                                <div id="dateInput" class="relative">
+                                    <a class="absolute text-2xl input-button top-2 left-2" title="toggle" data-toggle>
+                                        <i class="cursor-pointer fas fa-calendar"></i>
+                                    </a>
+                                    <input class="w-full max-w-xs py-2 text-lg border rounded-md cursor-pointer ps-12 me-4" type="text" placeholder="Pilih tanggal" data-input>
+                                </div>
+    
+                                <i class="mx-2 text-2xl fa-solid fa-arrow-right"></i>
+
+                                <div id="dateInputNext" class="relative dateInput">
+                                    <a class="absolute text-2xl input-button top-2 left-2" title="toggle" data-toggle>
+                                        <i class="cursor-pointer fas fa-calendar"></i>
+                                    </a>
+                                    <input class="w-full max-w-xs py-2 text-lg border rounded-md cursor-pointer ps-12" type="text" placeholder="Pilih tanggal" data-input>
+                                </div>
                             </div>
                         </div>
     
                         <div class="mt-5">
-                            <label class="block mb-2 text-2xl" for="">Kota Tujuan</label>
-                            <input class="w-full px-4 py-2 text-2xl" type="text" value="Hello World">
+                            <label class="block mb-2 text-2xl" for="">Durasi</label>
+                            <input class="w-full px-4 py-2 text-2xl" type="text" value="Full Day">
                         </div>
+
                     </div>
+                </div>
+                <div class="flex justify-end w-full mt-10">
+                    <button class="px-8 py-2 text-2xl text-white bg-green-600 rounded-full">Simpan</button>
                 </div>
             </div>
         </div>
+        
     </section>
+    <?php include("layout/footbar2.php") ?>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    
+    <script src="https://kit.fontawesome.com/fbda0dcbb4.js" crossorigin="anonymous"></script>
     <script>
-        // Menginisialisasi Flatpickr
         flatpickr("#dateInput", {
-            enableTime: true,
-            dateFormat: "Y-m-d H:i",
+            dateFormat: "d/m/Y", // Mengatur format tanggal yang diinginkan
+            altInput: true, // Menggunakan input tekstual alternatif untuk menampilkan tanggal
+            altFormat: "d/m/Y", // Format tanggal yang ditampilkan kepada pengguna
+            allowInput: true, // Memungkinkan pengguna untuk memasukkan tanggal manual
+            wrap: true, // Membungkus input dalam sebuah div untuk styling yang lebih baik
+            position: "auto", // Menempatkan kalender di sebelah kanan input
+        });
+
+        flatpickr("#dateInputNext", {
+            dateFormat: "d/m/Y", // Mengatur format tanggal yang diinginkan
+            altInput: true, // Menggunakan input tekstual alternatif untuk menampilkan tanggal
+            altFormat: "d/m/Y", // Format tanggal yang ditampilkan kepada pengguna
+            allowInput: true, // Memungkinkan pengguna untuk memasukkan tanggal manual
+            wrap: true, // Membungkus input dalam sebuah div untuk styling yang lebih baik
+            position: "auto", // Menempatkan kalender di sebelah kanan input
         });
     </script>
 
