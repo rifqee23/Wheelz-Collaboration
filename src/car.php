@@ -35,9 +35,7 @@ $result = mysqli_query($conn, $sql);
           class="flex flex-col border shadow-sm bg-primary rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
         >
           <div class="p-4 md:p-7">
-            <!-- <div class="shrink-0">
-              <img class="w-40" src="./mobil/download 1.png" alt="" />
-            </div> -->
+            
             <img class="w-80" src="mobil/<?php echo $row["gambar"] ?>" alt="" />
 
             <h2 class="mt-5 text-2xl font-semibold text-white">
