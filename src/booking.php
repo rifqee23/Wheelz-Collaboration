@@ -20,7 +20,15 @@ include("session-login/koneksi.php")
     <section class="container pt-32 font-bold">
         <h1 class="text-5xl text-center">Proses Booking</h1>
         
-        <form action="">
+        <?php
+            include("./session-login/koneksi.php");
+            $id = $_GET["id"];
+            $sql = "SELECT * FROM Vehicle WHERE  id = '$id'";
+            $data = mysqli_query($conn, $sql);
+            while($d=mysqli_fetch_array($data)) :
+                            
+        ?>
+        <form action="crud/prosesBooking.php" method="post">
             <div class="flex mb-20">
                 <div class="w-1/2 px-10 pt-20">
                     <h3 class="text-3xl text-center">Data Diri</h3>
@@ -66,20 +74,13 @@ include("session-login/koneksi.php")
                 </div>
     
                 <div class="flex flex-col items-center w-1/2 pt-20 ">
-                    <?php
-                        include("./session-login/koneksi.php");
-                        $id = $_GET["id"];
-                        $sql = "SELECT * FROM Vehicle WHERE  id = '$id'";
-                        $data = mysqli_query($conn, $sql);
-                        while($d=mysqli_fetch_array($data)) :
-                            
-                    ?>
+                    
                     <input type="hidden" name="id"  value="<?php echo $d['id']; ?>">
                     
                     <img class="w-4/5" src="./mobil/<?php echo $d["gambar"] ?>" alt="">
                     <h2 class="mt-10 text-4xl"><?= "Unit " . $d["nama_mobil"] . " - No Pol " . $d["nomor_polisi"] ?></h2>
                     <a class="mt-4 text-2xl font-light text-center text-blue-600" href="test.php?id=<?php echo $d["id"] ?>">Lihat Spesifikasi</a>
-                    <?php endwhile; ?>
+                    
     
     
                     <div class="w-full mt-24 bg-input">
@@ -119,6 +120,7 @@ include("session-login/koneksi.php")
                 </div>
             </div>
         </form>
+        <?php endwhile; ?>
         
     </section>
     <?php include("layout/footbar2.php") ?>
