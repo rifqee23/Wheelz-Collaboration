@@ -11,11 +11,8 @@
 <body class="">
     <?php include("layout/navbar.php") ?>
 
-    <section class="max-w-[115rem] w-full mx-auto  pt-24">
+    <section class="max-w-[115rem] w-full mx-auto  pt-24  z-50">
         <img class="w-72" src="./asset/WHEELZ FULL.png" alt="">
-        <div class="flex justify-center">
-
-        </div>
         <div class="flex justify-center mt-5 bg-root">
         <div
           class="flex flex-col w-full max-w-xl border shadow-sm bg-primary rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
