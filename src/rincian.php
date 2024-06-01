@@ -12,94 +12,126 @@
     <?php include("layout/navbar.php") ?>
 
     <section class="max-w-[115rem] w-full mx-auto  pt-24  z-50">
-        <img class="w-72" src="./asset/WHEELZ FULL.png" alt="">
-        <div class="flex justify-center mt-5 bg-root">
+        <div class="flex justify-around h-full py-16 mt-5 rounded-xl bg-input">
+          <button class="self-end px-3 py-3 text-xl font-semibold text-white rounded-xl w-28 bg-btncol">Kembali</button>
         <div
           class="flex flex-col w-full max-w-xl border shadow-sm bg-primary rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
         >
+        <?php
+            include("session-login/koneksi.php");
+            $id = $_GET['id'];
+            $sql = "SELECT 
+            u.nama,
+            v.car_only,
+            v.gambar,
+            r.tanggalAwal,
+            r.tanggalTujuan,
+            r.durasi,
+            u.notelp,
+            r.alamat,
+            u.email
+        FROM 
+            rincian r
+        JOIN 
+            user u ON r.id_user = u.id
+        JOIN 
+            Vehicle v ON r.id_vehicle = v.id
+
+            WHERE v.id='$id'
+        ";
+
+          $result = mysqli_query($conn, $sql);
+
+          while($data=mysqli_fetch_array($result)) :
+            ?>
           <div class="p-4 md:p-7">
             
-
+            
             <div class="flex justify-center">
-                <img class="w-80" src="mobil/download 1.png" alt="" />
+                <img class="w-80" src="mobil/<?= $data["gambar"] ?>" alt="" />
             </div>
 
-            <h2 class="mt-5 text-2xl font-semibold text-white">
-              <?php echo $row['nama_mobil'] ?>
+            <h2 class="mt-8 text-2xl font-semibold text-center text-white ">
+              mobil
             </h2>
-            <div class="flex mt-1">
-              <img class="w-4" src="./asset/Vector.svg" alt="rate" />
-              <img class="w-4" src="./asset/Vector.svg" alt="rate" />
-              <img class="w-4" src="./asset/Vector.svg" alt="rate" />
-              <img class="w-4" src="./asset/Vector.svg" alt="rate" />
-              <img class="w-4" src="./asset/Vector.svg" alt="rate" />
-            </div>
-
-            <div class="mt-3">
-              <span class="px-6 py-1 rounded-full bg-rate">5.0</span>
-            </div>
+            
+            
           </div>
-          <div class="relative py-1 ps-12">
-            <span class="relative z-10 w-full text-lg font-bold text-white"
-              >Seat :
-              <?php echo $row["seat"] ?>
-              Seat</span
-            >
-            <!-- Teks di atas latar belakang -->
-          </div>
+        
 
-          <div class="w-full text-lg font-bold text-center text-white">
-            Car Only
-          </div>
-
-          <div class="relative py-1 text-center">
+          <div class="relative px-10 text-left">
             <div class="absolute inset-0 bg-input opacity-20"></div>
             <!-- Latar belakang dengan opacity -->
-            <span class="relative z-10 w-full text-lg font-bold text-white"
-              >Rp.<?php echo $row["car_only"] ?>,00 - Full Day</span
-            >
+            <p class="relative z-10 w-full text-lg font-bold text-white">
+              <span>Nama</span>
+              <span class="ps-8">:</span>
+              <span>Rifqi</span>
+            </p>
             <!-- Teks di atas latar belakang -->
           </div>
 
-          <div class="w-full text-lg font-bold text-center text-white">
-            Car + Driver
+          <div class="w-full px-10 text-lg font-bold text-left text-white">
+            <p class="flex items-center space-x-2">
+              <span>Price</span>
+              <span class="pl-[2.1rem]">:</span>
+              <span>Rp 500,000,00</span>
+            </p>
           </div>
 
-          <div class="relative py-1 text-center">
+
+
+          <div class="relative px-10 text-left">
             <div class="absolute inset-0 bg-input opacity-20"></div>
             <!-- Latar belakang dengan opacity -->
-            <span class="relative z-10 w-full text-lg font-bold text-white"
-              >Rp.
-              <?php echo $row["car_only_driver"] ?>,00 - Full Day</span
-            >
+            <p class="relative z-10 w-full text-lg font-bold text-white">
+              <span>Date</span>
+              <span class="ps-[2.4rem]">:</span>
+              <span>1/06/2024  -  8/06/2024</span>
+            </p>
             <!-- Teks di atas latar belakang -->
           </div>
 
-          <div class="w-full text-lg font-bold text-center text-white">
-            Car + Driver + Fuel
+          <div class="w-full px-10 text-lg font-bold text-left text-white">
+            <p class="flex items-center space-x-2">
+              <span>Time</span>
+              <span class="pl-[2.1rem]">:</span>
+              <span>Fullday</span>
+            </p>
           </div>
 
-          <div class="relative py-1 text-center">
+          <div class="relative px-10 text-left">
             <div class="absolute inset-0 bg-input opacity-20"></div>
             <!-- Latar belakang dengan opacity -->
-            <span class="relative z-10 w-full text-lg font-bold text-white"
-              >Rp.
-              <?php echo $row["car_only_driver_fuel"] ?>,00 - Full Day</span
-            >
+            <p class="relative z-10 w-full text-lg font-bold text-white">
+              <span>No Hp</span>
+              <span class="ps-[1.65rem]">:</span>
+              <span>081234567891</span>
+            </p>
             <!-- Teks di atas latar belakang -->
           </div>
 
-          <div class="flex justify-center w-full p-4">
-            <button
-              id="bookBtn"
-              class="px-6 py-1 font-bold text-white rounded-full bg-btncol"
-              data-id="<?= $row['id'] ?>"
-              data-gambar="<?= htmlspecialchars($row['gambar']) ?>"
-            >
-              Book Now
-            </button>
+          <div class="w-full px-10 text-lg font-bold text-left text-white">
+            <p class="flex items-center space-x-2">
+              <span>Alamat</span>
+              <span class="pl-[0.8rem]">:</span>
+              <span>Jalan Kopi</span>
+            </p>
           </div>
+
+          <div class="relative px-10 text-left">
+            <div class="absolute inset-0 bg-input opacity-20"></div>
+            <!-- Latar belakang dengan opacity -->
+            <p class="relative z-10 w-full text-lg font-bold text-white">
+              <span>Email</span>
+              <span class="ps-[1.9rem]">:</span>
+              <span>r@gmail.com</span>
+            </p>
+            <!-- Teks di atas latar belakang -->
+          </div>
+
+          <?php endwhile; ?>
         </div>
+        <button class="self-end px-3 py-3 text-xl font-semibold text-white rounded-xl w-28 bg-btncol">Booking</button>
         </div>
     </section>
 

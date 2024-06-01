@@ -9,6 +9,9 @@ module.exports = {
       container: {
         center: true
       },
+      padding: {
+        'colon' : '2.2rem',
+      },
       boxShadow: {
         '3xl': 'inset 0 5px 10px 0 rgba(0, 0, 0, 0.3)',
       },
