@@ -34,8 +34,10 @@ if(isset($_POST["submit"])) {
         die("Error inserting record: " . mysqli_error($conn));
     }
 
+    $id_pelanggan = mysqli_insert_id($conn);
+    
     // Redirect or display success message
-    header("Location: ../rincian.php?id=$id");
+    header("Location: ../rincian.php?id=$id_pelanggan");
     exit();
 }
 ?>

@@ -24,9 +24,11 @@
             u.nama,
             v.car_only,
             v.gambar,
+            v.nama_mobil,
             r.tanggalAwal,
             r.tanggalTujuan,
             r.durasi,
+            r.id_pemesanan,
             u.notelp,
             r.alamat,
             u.email
@@ -37,7 +39,7 @@
         JOIN 
             Vehicle v ON r.id_vehicle = v.id
 
-            WHERE v.id='$id'
+            WHERE r.id_pemesanan  ='$id'
         ";
 
           $result = mysqli_query($conn, $sql);
@@ -52,7 +54,7 @@
             </div>
 
             <h2 class="mt-8 text-2xl font-semibold text-center text-white ">
-              mobil
+            <?= $data["nama_mobil"] ?>
             </h2>
             
             
@@ -65,7 +67,7 @@
             <p class="relative z-10 w-full text-lg font-bold text-white">
               <span>Nama</span>
               <span class="ps-8">:</span>
-              <span>Rifqi</span>
+              <span><?= $data["nama"] ?></span>
             </p>
             <!-- Teks di atas latar belakang -->
           </div>
@@ -74,7 +76,7 @@
             <p class="flex items-center space-x-2">
               <span>Price</span>
               <span class="pl-[2.1rem]">:</span>
-              <span>Rp 500,000,00</span>
+              <span><?= $data["car_only"] ?></span>
             </p>
           </div>
 
@@ -86,7 +88,7 @@
             <p class="relative z-10 w-full text-lg font-bold text-white">
               <span>Date</span>
               <span class="ps-[2.4rem]">:</span>
-              <span>1/06/2024  -  8/06/2024</span>
+              <span><?= $data["tanggalAwal"] . " - " . $data["tanggalTujuan"] ?></span>
             </p>
             <!-- Teks di atas latar belakang -->
           </div>
@@ -95,7 +97,7 @@
             <p class="flex items-center space-x-2">
               <span>Time</span>
               <span class="pl-[2.1rem]">:</span>
-              <span>Fullday</span>
+              <span><?= $data["durasi"] ?></span>
             </p>
           </div>
 
@@ -105,7 +107,7 @@
             <p class="relative z-10 w-full text-lg font-bold text-white">
               <span>No Hp</span>
               <span class="ps-[1.65rem]">:</span>
-              <span>081234567891</span>
+              <span><?= $data["notelp"] ?></span>
             </p>
             <!-- Teks di atas latar belakang -->
           </div>
@@ -114,7 +116,7 @@
             <p class="flex items-center space-x-2">
               <span>Alamat</span>
               <span class="pl-[0.8rem]">:</span>
-              <span>Jalan Kopi</span>
+              <span><?= $data["alamat"] ?></span>
             </p>
           </div>
 
@@ -124,7 +126,7 @@
             <p class="relative z-10 w-full text-lg font-bold text-white">
               <span>Email</span>
               <span class="ps-[1.9rem]">:</span>
-              <span>r@gmail.com</span>
+              <span><?= $data["email"] ?></span>
             </p>
             <!-- Teks di atas latar belakang -->
           </div>
