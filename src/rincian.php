@@ -138,5 +138,6 @@
     </section>
 
     <?php include("layout/footbar2.php") ?>
+    <script src="./../node_modules/preline/dist/preline.js"></script>
 </body>
 </html>
