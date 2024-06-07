@@ -66,7 +66,9 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO pembayaran (bukti_bayar) VALUES('$nama_file_asli')";
     // Jalankan query untuk menambahkan data baru
     if (mysqli_query($conn, $sql)) {
-        echo "New record successfully created.";
+        $last_id = mysqli_insert_id($conn);
+        header("Location: ./../bookingBerhasil.php?id=$last_id");
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
