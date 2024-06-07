@@ -62,8 +62,21 @@ if (isset($_POST['submit'])) {
         echo "Upload gambar gagal!";
     }
 
+    $unique_number = substr(time(), -5) . rand(10000, 99999);
+
+    $unique_number = str_pad($unique_number, 13, '0', STR_PAD_LEFT);
+
+    // Set waktu berdasarkan local
+    date_default_timezone_set('Asia/Jakarta');
+
+    // waktu sekarang
+    $time = date("H:i:s");
+
+    // tanggal sekarang
+    $tanggal = date("Y-m-d");
+
     // Query untuk menambahkan data baru
-    $sql = "INSERT INTO pembayaran (bukti_bayar) VALUES('$nama_file_asli')";
+    $sql = "INSERT INTO pembayaran (bukti_bayar, ref, `time`, tanggal) VALUES('$nama_file_asli', '$unique_number', '$time', '$tanggal')";
     // Jalankan query untuk menambahkan data baru
     if (mysqli_query($conn, $sql)) {
         $last_id = mysqli_insert_id($conn);
