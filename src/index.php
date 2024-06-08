@@ -90,7 +90,7 @@
           <button
             class="2xl:mt-10 inline-flex items-center bg-secondary gap-x-1 text-sm font-semibold rounded-full border border-transparent text-white py-2 px-3 lg:mt-10 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400"
           >
-            Read More
+            <a href="syarat.html">Read More</a>
             <svg
               class="flex-shrink-0 size-4"
               xmlns="http://www.w3.org/2000/svg"
