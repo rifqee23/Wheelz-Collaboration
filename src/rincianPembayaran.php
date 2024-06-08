@@ -61,7 +61,7 @@
                         <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
                     </svg></span>
                     <a href="https://wa.me/085838767982">Konsultasi Via Whatsapp</a></button>
-            <button class="px-4 w-60 py-3 text-2xl font-semibold text-white bg-blue-500 rounded-2xl">Lihat Rincian</button>
+            <button class="px-4 w-60 py-3 text-2xl font-semibold text-white bg-blue-500 rounded-2xl"><a href="rincian.php">Lihat Rincian</a></button>
         </div>
         <div class="absolute bottom-0 w-full -z-20">
             <?php include("layout/footbar2.php") ?>
