@@ -15,7 +15,7 @@
 
   <section class="max-w-[115rem] w-full mx-auto  pt-24  z-50">
     <div class="flex justify-around h-full py-16 mt-5 rounded-xl bg-input">
-      <button class="self-end px-3 py-3 text-xl font-semibold text-white rounded-xl w-28 bg-btncol">Kembali</button>
+      <button class="self-end px-3 py-3 text-xl font-semibold text-white rounded-xl w-28 bg-btncol"><a href="index.php">Kembali</a></button>
       <div class="flex flex-col w-full max-w-xl border shadow-sm bg-primary rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
         <?php
         include("session-login/koneksi.php");
