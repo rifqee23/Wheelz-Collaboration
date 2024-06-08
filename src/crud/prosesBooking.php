@@ -2,7 +2,7 @@
 session_start();
 include("./../session-login/koneksi.php");
 
-if(isset($_POST["submit"])) {
+if (isset($_POST["submit"])) {
     $nama = $_POST["nama"];
     $telp = $_POST["telp"];
     $alamat = $_POST["alamat"];
@@ -35,9 +35,8 @@ if(isset($_POST["submit"])) {
     }
 
     $id_pelanggan = mysqli_insert_id($conn);
-    
+
     // Redirect or display success message
-    header("Location: ../rincian.php?id=$id_pelanggan");
+    header("Location: ../rincian.php?id=$id_pelanggan&id_mobil=$id");
     exit();
 }
-?>

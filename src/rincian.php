@@ -20,6 +20,7 @@
         <?php
         include("session-login/koneksi.php");
         $id = $_GET['id'];
+        $id_mobil = $_GET['id_mobil'];
         $sql = "SELECT 
             u.nama,
             v.car_only,
@@ -144,9 +145,11 @@
     const booking = document.getElementById("booking");
 
     let id = "<?php echo $id; ?>";
+    let id_mobil = "<?php echo $id_mobil ?>";
     console.log(id);
+    console.log(id_mobil);
     booking.addEventListener("click", () => {
-      window.location.href = "pembayaran.php?id=" + id;
+      window.location.href = "pembayaran.php?id=" + id + "&id_mobil=" + id_mobil;
     })
   </script>
 </body>
