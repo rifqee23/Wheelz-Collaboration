@@ -464,7 +464,7 @@
                 class="mt-4 px-4 py-1 w-80 flex text-center items-center gap-x-2 text-lg font-semibold rounded-lg border border-transparent bg-input text-black hover:bg-blue-700"
               >
                 <span class="me-9"><img src="./asset/wa.svg" alt="" /></span>
-                Click Here !
+                <a href="https://wa.me/085838767982">Click Here !</a>
               </button>
             </div>
           </div>
