@@ -1,3 +1,14 @@
+<?php
+session_start();
+include("session-login/koneksi.php");
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit(); // Terminate script execution after the redirect
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,21 +34,17 @@
             </div>
 
             <div class="w-full px-3 py-2 mt-16 bg-btncol rounded-2xl">
-                <p class="text-2xl font-semibold text-center">Booking Berhasil</p>
+                <p class="text-2xl font-semibold text-center text-white">Refund Sedang di proses oleh admin</p>
+            </div>
+
+            <div class="flex justify-center mt-5">
+
+                <a href="yourBooking.php" class="px-4 py-3 text-2xl font-semibold text-white bg-blue-500 rounded-2xl">Selesai</a>
+
             </div>
         </div>
 
-        <div class="container flex justify-end ">
-            <?php
-            include("session-login/koneksi.php");
-            $id = $_GET["id"];
-            $sql = "SELECT id FROM pembayaran WHERE id='$id'";
-            $rs = mysqli_query($conn, $sql);
-            while ($row = mysqli_fetch_array($rs)) :
-            ?>
-                <a href="rincianPembayaran.php?id=<?= $row["id"] ?>" class="px-4 py-3 text-2xl font-semibold text-white bg-blue-500 rounded-2xl">Lihat Rincian</a>
-            <?php endwhile; ?>
-        </div>
+
         <div class="absolute bottom-0 w-full -z-20">
             <?php include("layout/footbar2.php") ?>
         </div>

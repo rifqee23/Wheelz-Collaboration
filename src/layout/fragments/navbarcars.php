@@ -17,7 +17,7 @@
                 <button class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white group bg-third hover:bg-gray-50">Search Your Car</button>
 
                 <a href="yourBooking.php" class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white group bg-third hover:bg-gray-50">Booking</a>
-                <button class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white group bg-third hover:bg-gray-50 focus:z-10 dark:bg-neutral-800 dark:border-blue-500 dark:text-neutral-300">FAQ</button>
+                <a href="yourRefund.php" class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white group bg-third hover:bg-gray-50 focus:z-10 dark:bg-neutral-800 dark:border-blue-500 dark:text-neutral-300">Refund</a>
             </nav>
         </div>
     </div>

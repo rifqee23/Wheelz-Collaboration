@@ -85,7 +85,7 @@ if (!isset($_SESSION['user'])) {
 
                         <img class="w-4/5" src="./mobil/<?php echo $d["gambar"] ?>" alt="">
                         <h2 class="mt-10 text-4xl"><?= "Unit " . $d["nama_mobil"] . " - No Pol " . $d["nomor_polisi"] ?></h2>
-                        <a class="mt-4 text-2xl font-light text-center text-blue-600" href="test.php?id=<?php echo $d["id"] ?>">Lihat Spesifikasi</a>
+                        <a class="mt-4 text-2xl font-light text-center text-blue-600" href="spesifikasi.php?id=<?php echo $d["id"] ?>">Lihat Spesifikasi</a>
 
 
 
