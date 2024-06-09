@@ -152,19 +152,30 @@
 
           <h3 class="mt-5 font-bold">MASUKKAN BUKTI PEMBAYARAN</h3>
 
-          <form action="crud/pay.php" method="post" enctype="multipart/form-data">
-            <div class="max-w-sm mt-5">
-              <input type="hidden" name="id">
-              <label class="block">
-                <span class="sr-only">Choose profile photo</span>
-                <input type="file" name="gambar" class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400 ">
-              </label>
+          <?php
+          include("session-login/koneksi.php");
+          $id = $_GET["id"];
+          $id_mobil = $_GET["id_mobil"];
+          $sql = "SELECT * FROM rincian WHERE id_pemesanan='$id' AND id_vehicle='$id_mobil'";
+          $rs = mysqli_query($conn, $sql);
+          while ($row = mysqli_fetch_array($rs)) :
+          ?>
+            <form action="crud/pay.php" method="post" enctype="multipart/form-data">
+              <div class="max-w-sm mt-5">
+                <input type="hidden" name="id" value="<?= $row["id_pemesanan"] ?>">
+                <input type="hidden" name="id_vehicle" value="<?= $row["id_vehicle"] ?>">
+                <label class="block">
+                  <span class="sr-only">Choose profile photo</span>
+                  <input type="file" name="gambar" class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400 ">
+                </label>
 
-            </div>
-            <div class="flex justify-center mt-16">
-              <button name="submit" type="submit" class="px-20 py-4 text-white bg-btncol rounded-xl">Simpan</button>
-            </div>
-          </form>
+              </div>
+              <div class="flex justify-center mt-16">
+                <button name="submit" type="submit" class="px-20 py-4 text-white bg-btncol rounded-xl">Simpan</button>
+              </div>
+
+            <?php endwhile; ?>
+            </form>
         </div>
       </div>
     </div>

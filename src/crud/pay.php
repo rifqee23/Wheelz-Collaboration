@@ -1,9 +1,13 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 include("../session-login/koneksi.php");
 
 if (isset($_POST['submit'])) {
+    $idUser = $_SESSION['user']['id'];
+    $id_pemesanan = $_POST["id"];
+    $id_vehicle = $_POST["id_vehicle"];
 
     // upload
     $folder = "/opt/lampp/htdocs/wheelz admin/src/asset/bukti_bayar/";
@@ -76,7 +80,7 @@ if (isset($_POST['submit'])) {
     $tanggal = date("Y-m-d");
 
     // Query untuk menambahkan data baru
-    $sql = "INSERT INTO pembayaran (bukti_bayar, ref, `time`, tanggal) VALUES('$nama_file_asli', '$unique_number', '$time', '$tanggal')";
+    $sql = "INSERT INTO pembayaran (id_user, id_rincian, id_vehicle, bukti_bayar, ref, `time`, tanggal) VALUES('$idUser', '$id_pemesanan', '$id_vehicle','$nama_file_asli', '$unique_number', '$time', '$tanggal')";
     // Jalankan query untuk menambahkan data baru
     if (mysqli_query($conn, $sql)) {
         $last_id = mysqli_insert_id($conn);
