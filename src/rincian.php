@@ -1,3 +1,13 @@
+<?php
+session_start();
+include("session-login/koneksi.php");
+
+if (!isset($_SESSION['user'])) {
+  header("Location: login.php");
+  exit(); // Terminate script execution after the redirect
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
