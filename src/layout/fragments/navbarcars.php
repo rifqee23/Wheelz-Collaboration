@@ -3,10 +3,10 @@
     <nav class="max-w-[115rem] items-center w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <a class="flex-none" href="index.php"><img class="w-72" src="./asset/logo.png" alt=""></a>
         <div class="flex flex-row items-center gap-10 mt-5 text-2xl text-white sm:justify-end sm:mt-0 sm:ps-5">
-            <a class="font-medium " href="#" aria-current="page">Home</a>
-            <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">About</a>
+            <a class="font-medium " href="index.php#" aria-current="page">Home</a>
+            <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="index.php#about">About</a>
             <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Car</a>
-            <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Contact</a>
+            <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="index.php#contact">Contact</a>
 
         </div>
 
