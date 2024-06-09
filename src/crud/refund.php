@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
     // Jalankan query untuk menambahkan data baru
     if (mysqli_query($conn, $sql)) {
         $last_id = mysqli_insert_id($conn);
-        header("Location: ./../bookingBerhasil.php?id=$last_id");
+        header("Location: ./../refundProses.php?id=$last_id");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
