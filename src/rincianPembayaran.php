@@ -54,7 +54,7 @@
         </div>
 
         <div class="flex justify-around w-full max-w-5xl ">
-            <button class="px-2 py-3 text-2xl font-semibold text-white bg-red-500 w-60 rounded-2xl">Batalkan Reservasi</button>
+            <button class="px-2 py-3 text-2xl font-semibold text-white bg-red-500 w-60 rounded-2xl"><a href="pembatalan_reservasi.php">Batalkan Reservasi</a></button>
             <button class="flex items-center justify-between px-6 py-3 text-2xl font-semibold bg-blue-100 w-96 rounded-2xl"><span><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#24f981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
