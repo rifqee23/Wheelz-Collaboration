@@ -1,172 +1,80 @@
+<?php
+session_start();
+include("session-login/koneksi.php");
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit(); // Terminate script execution after the redirect
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembatalan Reservasi</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-        .header {
-            background-color: #232d51;
-            padding: 20px;
-            color: white;
-            text-align: left;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #f2f2f2;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .form-title {
-            background-color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="file"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 0 auto;
-            display: block;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-        .form-group input[type="submit"] {
-            background-color: #4b61d1;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .form-group input[type="submit"]:hover {
-            background-color: #3949a3;
-        }
-        .whatsapp-button {
-            background-color: #25d366;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            display: block;
-            text-align: center;
-            margin: 10px 0;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .footer {
-            background-color: #232d51;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-        .footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            display: inline-block;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Booking Berhasil</title>
+    <link rel="stylesheet" href="output.css">
 </head>
-<body>
-    <div class="header">
-        <h1>Wheelz Collaboration</h1>
-    </div>
-    <div class="container">
-        <div class="form-title">
-            <h2>Pembatalan Reservasi</h2>
-        </div>
-        <form action="pembatalan_reservasi.php" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="name">Masukkan Nama</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="payment_proof">Masukkan Bukti Pembayaran</label>
-                <input type="file" id="payment_proof" name="payment_proof" required>
-            </div>
-            <div class="form-group">
-                <label for="car_type">Masukkan Tipe Mobil</label>
-                <input type="text" id="car_type" name="car_type" required>
-            </div>
-            <div class="form-group">
-                <label for="account_number">Masukkan No Rekening/E-Wallet</label>
-                <input type="text" id="account_number" name="account_number" required>
-            </div>
-            <div class="form-group">
-                <a href="https://wa.me/085838767982" class="whatsapp-button">Konsultasi Via WhatsApp</a>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Simpan">
-            </div>
-        </form>
-    </div>
-    <div class="footer">
-        <a href="#">About</a>
-        <a href="#">Career</a>
-        <a href="#">Brand Center</a>
-        <a href="#">Blog</a>
-        <a href="#">Help Center</a>
-        <a href="#">Discord Server</a>
-        <a href="#">Twitter</a>
-        <a href="#">Facebook</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Licensing</a>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">IOS</a>
-        <a href="#">Android</a>
-        <a href="#">Windows</a>
-        <a href="#">MacOS</a>
-    </div>
-</body>
-</html>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
-    $car_type = $_POST['car_type'];
-    $account_number = $_POST['account_number'];
-    
-    $uploadDir = 'uploads/';
-    $uploadFile = $uploadDir . basename($_FILES['payment_proof']['name']);
-    
-    if (!file_exists($uploadDir)) {
-        mkdir($uploadDir, 0777, true);
-    }
-    
-    if (move_uploaded_file($_FILES['payment_proof']['tmp_name'], $uploadFile)) {
-        echo "File is valid, and was successfully uploaded.\n";
-        // You can save the $name, $car_type, $account_number, and $uploadFile to a database here.
-    } else {
-        echo "Possible file upload attack!\n";
-    }
-}
-?>
+<body class="h-screen">
+    <?php include("layout/navbar.php") ?>
+
+    <div class="relative flex flex-col items-center h-full pt-40">
+        <div class="flex flex-col items-center justify-center w-full max-w-2xl px-4 py-4 mb-32 bg-input rounded-xl">
+            <h3 class="px-5 py-2 text-xl font-semibold text-center bg-white rounded-full">Rincian Pembayaran</h3>
+            <div class="w-full">
+                <form action="crud/refund.php" method="post" enctype="multipart/form-data">
+                    <div class="flex">
+
+                        <div class="w-1/2">
+                            <div>
+                                <label class="text-lg font-semibold" for="">Nama</label>
+                                <input class="px-3 py-1 rounded-full" type="text" name="name">
+                            </div>
+
+                            <div class="mt-4">
+                                <label class="text-lg font-semibold" for="">Bukti Pembayaran</label>
+
+                                <input type="file" name="gambar" class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400 ">
+
+                            </div>
+
+                            <div class="mt-4">
+                                <label class="text-lg font-semibold" for="">Nomor Rekening</label>
+                                <input class="px-3 py-1 rounded-full" type="text" name="norek">
+                            </div>
+                        </div>
+                        <div class="w-1/2">
+                            <div class="flex flex-col justify-center h-full mb-2">
+                                <label class="text-lg font-semibold" for="">Tipe Mobil</label>
+                                <input class="px-3 py-1 rounded-full" type="text" name="type_mobil">
+                            </div>
+                        </div>
+
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-row-reverse justify-around w-full max-w-5xl">
+            <button type="submit" name="submit" class="px-4 py-3 text-2xl font-semibold text-white bg-blue-500 w-60 rounded-2xl">Simpan</button>
+            </form>
+            <a href="csDiana.php" class="flex items-center justify-between px-6 py-3 text-2xl font-semibold bg-blue-100 w-96 rounded-2xl"><span><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#24f981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                        <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                    </svg></span>Konsultasi Via Whatsapp
+            </a>
+        </div>
+        <div class="absolute bottom-0 w-full -z-20">
+            <?php include("layout/footbar2.php") ?>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
