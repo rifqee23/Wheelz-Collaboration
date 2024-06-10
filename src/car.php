@@ -27,14 +27,14 @@ $result = mysqli_query($conn, $sql);
   <!-- Section Car -->
 
   <section class="container relative flex justify-center mx-auto mt-5">
-    <div class="flex flex-wrap w-full mx-auto 2xl:px-32 lg:ps-20 2xl:gap-x-32 gap-y-10 lg:gap-x-20">
+    <div class="flex flex-wrap w-full mx-auto 2xl:px-0 lg:ps-20 2xl:gap-x-32 gap-y-10 lg:gap-x-20">
       <?php if (
         mysqli_num_rows($result) >
         0
       ) : ?>
         <?php while ($row = mysqli_fetch_assoc($result)) : ?>
           <div class="flex flex-col border shadow-sm bg-primary rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-            <div class="p-4 md:p-7">
+            <div class="p-0 mx-auto md:p-7 md:h-96">
 
               <img class="w-80" src="mobil/<?php echo $row["gambar"] ?>" alt="" />
 
