@@ -1,13 +1,3 @@
-<?php
-session_start();
-include("session-login/koneksi.php");
-
-if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
-    exit(); // Terminate script execution after the redirect
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +27,7 @@ if (!isset($_SESSION['user'])) {
                 </thead>
                 <tbody>
                     <?php
+                    session_start();
                     include("session-login/koneksi.php");
                     $id = $_SESSION['user']['id'];
                     $sql = "SELECT 

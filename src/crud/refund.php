@@ -67,7 +67,6 @@ if (isset($_POST['submit'])) {
         echo "Upload gambar gagal!";
     }
 
-
     // Query untuk menambahkan data baru
     $sql = "INSERT INTO refund (id_user, nama, bukti_bayar, tipe_mobil, norek) VALUES('$idUser', '$name','$nama_file_asli', '$type_mobil', '$norek')";
     // Jalankan query untuk menambahkan data baru
@@ -79,3 +78,8 @@ if (isset($_POST['submit'])) {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
+
+// Fix permission denied error
+// Make sure the target directory is writable by the web server user
+// You can do this by running the following command in your terminal:
+// sudo chmod -R 755 /opt/lampp/htdocs/wheelz\ admin/src/asset/buktI_bayar2/
