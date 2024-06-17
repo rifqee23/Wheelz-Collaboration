@@ -73,7 +73,7 @@ if (!isset($_SESSION['user'])) {
                     </svg></span>Konsultasi Via Whatsapp</a>
             <a href="yourBooking.php" class="px-4 py-3 text-2xl font-semibold text-center text-white bg-blue-500 w-60 rounded-2xl">Simpan</a>
         </div>
-        <div class="absolute bottom-0 w-full -z-20">
+        <div class="w-full">
             <?php include("layout/footbar2.php") ?>
         </div>
 

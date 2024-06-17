@@ -14,7 +14,7 @@
     <div class="flex flex-col mt-5 shadow-sm w-full mx-auto max-w-[115rem] overflow-hidden rounded-2xl">
         <div>
             <nav class="flex divide-x-2">
-                <button class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white group bg-third hover:bg-gray-50">Search Your Car</button>
+                <input id="keyword" placeholder="Search" class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white placeholder:text-white bg-third" />
 
                 <a href="yourBooking.php" class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white group bg-third hover:bg-gray-50">Booking</a>
                 <a href="yourRefund.php" class="relative flex-1 min-w-0 px-4 py-8 overflow-hidden text-xl font-bold text-center text-white group bg-third hover:bg-gray-50 focus:z-10 dark:bg-neutral-800 dark:border-blue-500 dark:text-neutral-300">Refund</a>

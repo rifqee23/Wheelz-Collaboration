@@ -79,7 +79,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="flex flex-col items-center w-1/2 pt-20 ">
+                    <div class="flex flex-col items-center w-1/2 pt-[2.34rem]">
 
                         <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
 
