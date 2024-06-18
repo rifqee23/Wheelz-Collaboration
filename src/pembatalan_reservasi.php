@@ -49,7 +49,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="w-1/2">
                             <div class="flex flex-col justify-center h-full mb-2">
-                                <label class="text-lg font-semibold" for="">Tipe Kendaraan</label>
+                                <label class="text-lg font-semibold" for="">Tipe Mobil</label>
                                 <input class="px-3 py-1 rounded-full" type="text" name="type_mobil">
                             </div>
                         </div>
