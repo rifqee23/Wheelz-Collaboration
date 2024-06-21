@@ -69,7 +69,7 @@ if (!isset($_SESSION['user'])) {
                     </svg></span>Konsultasi Via Whatsapp
             </a>
         </div>
-        <div class="absolute bottom-0 w-full -z-20">
+        <div class="w-full">
             <?php include("layout/footbar2.php") ?>
         </div>
 

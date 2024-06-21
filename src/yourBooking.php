@@ -67,10 +67,12 @@
                                     <?= $d["Status"] ?>
                                     <?php if ($d["Status"] == "pending") : ?>
                                         <img src="asset/icons/clock.svg" alt="Pending" srcset="">
-                                    <?php elseif ($d["Status"] == "verified") : ?>
-                                        <img src="asset/icons/clock.svg" alt="" srcset="">
-                                    <?php endif; ?>
+                                    <?php elseif ($d["Status"] == "Verified") : ?>
+                                        <img src="asset/icons/success.svg" alt="verified" srcset="">
+                                    <?php else : ?>
+                                        <img src="asset/icons/done.svg" alt="verified" srcset="">
 
+                                    <?php endif; ?>
                                 </div>
                             </td>
                         </tr>
@@ -102,6 +104,7 @@
 
     <?php include("layout/footbar2.php") ?>
     <script src="./../node_modules/preline/dist/preline.js"></script>
+    
 
 </body>
 
