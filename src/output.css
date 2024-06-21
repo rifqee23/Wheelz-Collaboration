@@ -2194,6 +2194,17 @@ video {
 @media (min-width: 768px) {
   .md\:h-\[28rem\] {
     height: 28rem;
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .md\:h-80 {
+    height: 20rem;
+  }
+
+  .md\:h-96 {
+    height: 24rem;
   }
 
   .md\:p-5 {
@@ -2278,6 +2289,16 @@ video {
 
   .\32xl\:gap-80 {
     gap: 20rem;
+  }
+
+  .\32xl\:gap-x-32 {
+    -moz-column-gap: 8rem;
+         column-gap: 8rem;
+  }
+
+  .\32xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 

@@ -9,6 +9,8 @@ session_start();
     <div class="flex flex-row items-center gap-10 mt-5 text-2xl text-white sm:justify-end sm:mt-0 sm:ps-5">
       <a class="font-medium" href="index.php" aria-current="page">Home</a>
       <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#about">About</a>
+      <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="forum.php">Discussion</a>
+
       <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="car.php">Car</a>
       <a class="font-medium hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#contact">Contact</a>
 
